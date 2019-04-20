@@ -72,6 +72,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 #define LEN 10						// 用于存储月份名
 #define MONTH 12					// 一年内的月数
