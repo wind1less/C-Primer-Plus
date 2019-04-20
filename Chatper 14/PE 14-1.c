@@ -78,7 +78,6 @@
 
 int days_in_month(int month);				// 接受月份并返回一年中到该月为止的总天数
 int get_month();					// 获取一个正确的月份拼写输入
-int find_month(char *);					// 使用月份拼写寻找月份号
 
 struct months {
 	char name[LEN];					// 月份名
