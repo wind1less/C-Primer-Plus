@@ -3,14 +3,14 @@
 //#include <ctype.h>
 //
 //#define LEN 10					// 用于存储月份名
-//int days_in_month(int month);		// 接受月份并返回一年中到该月为止的总天数
+//int days_in_month(int month);				// 接受月份并返回一年中到该月为止的总天数
 //int get_month();					// 获取一个正确的月份输入
 //
 //struct months {
 //	char name[LEN];					// 月份名
-//	char abbreviation[3];			// 月份名的3 个字母缩写
-//	int  days;						// 该月的天数
-//	int sn;							// 月份号
+//	char abbreviation[3];				// 月份名的3 个字母缩写
+//	int  days;					// 该月的天数
+//	int sn;						// 月份号
 //};
 //
 //struct months month_info_2019[12] = {
@@ -76,15 +76,15 @@
 #define LEN 10						// 用于存储月份名
 #define MONTH 12					// 一年内的月数
 
-int days_in_month(int month);		// 接受月份并返回一年中到该月为止的总天数
+int days_in_month(int month);				// 接受月份并返回一年中到该月为止的总天数
 int get_month();					// 获取一个正确的月份拼写输入
-int find_month(char *);				// 使用月份拼写寻找月份号
+int find_month(char *);					// 使用月份拼写寻找月份号
 
 struct months {
 	char name[LEN];					// 月份名
-	char abbreviation[3];			// 月份名的3 个字母缩写
-	int  days;						// 该月的天数
-	int  sn;						// 月份号
+	char abbreviation[3];				// 月份名的3 个字母缩写
+	int  days;					// 该月的天数
+	int  sn;					// 月份号
 };
 
 struct months month_info_2019[MONTH] = {
