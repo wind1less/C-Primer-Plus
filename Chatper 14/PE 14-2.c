@@ -1,31 +1,31 @@
-// ±àĞ´Ò»¸öº¯Êı£¬ÌáÊ¾ÓÃ»§ÊäÈëÈÕ¡¢ÔÂºÍÄê¡£
-// ÔÂ·İ¿ÉÒÔÊÇÔÂ·İºÅ¡¢ÔÂ·İÃû»òÔÂ·İÃûËõĞ´¡£
-// È»ºó¸Ã³ÌĞò·µ»ØÒ»ÄêÖĞµ½ÓÃ»§Ö¸¶¨ÈÕ×Ó£¨°üÀ¨ÕâÒ»Ìì£©µÄ×ÜÌìÊı¡£
+// ç¼–å†™ä¸€ä¸ªå‡½æ•°ï¼Œæç¤ºç”¨æˆ·è¾“å…¥æ—¥ã€æœˆå’Œå¹´ã€‚
+// æœˆä»½å¯ä»¥æ˜¯æœˆä»½å·ã€æœˆä»½åæˆ–æœˆä»½åç¼©å†™ã€‚
+// ç„¶åè¯¥ç¨‹åºè¿”å›ä¸€å¹´ä¸­åˆ°ç”¨æˆ·æŒ‡å®šæ—¥å­ï¼ˆåŒ…æ‹¬è¿™ä¸€å¤©ï¼‰çš„æ€»å¤©æ•°ã€‚
 
-// ÔÂ·İĞÅÏ¢ÕûÀíÎª½á¹¹
-// ´¦ÀíÈòÄê/Æ½Äê leap year/common year
+// æœˆä»½ä¿¡æ¯æ•´ç†ä¸ºç»“æ„
+// å¤„ç†é—°å¹´/å¹³å¹´ leap year/common year
 
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 
-#define LEN 10														// ÓÃÓÚ´æ´¢ÔÂ·İÃûµÄ×Ö·ûÊı×é
-#define MONTH 12													// Ò»ÄêÄÚµÄÔÂÊı
+#define LEN 10														// ç”¨äºå­˜å‚¨æœˆä»½åçš„å­—ç¬¦æ•°ç»„
+#define MONTH 12													// ä¸€å¹´å†…çš„æœˆæ•°
 
-int get_year();														// »ñÈ¡ÄêÔÂÈÕÊäÈë²¢¼ì²éÓĞĞ§ĞÔ
+int get_year();														// è·å–å¹´æœˆæ—¥è¾“å…¥å¹¶æ£€æŸ¥æœ‰æ•ˆæ€§
 int get_month();
 int get_day(int month, struct months *);
 
-void eat_line();													// Çå¿ÕÊäÈë»º³åÇø
-int is_leap(int year);											// ¼ÆËãÊÇ·ñÎªÈòÄê
-int calc_date(struct months *, int month, int day);		// ¼ÆËãµ½½ØÖ¹ÈÕµÄÌìÊı
+void eat_line();													// æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
+int is_leap(int year);											// è®¡ç®—æ˜¯å¦ä¸ºé—°å¹´
+int calc_date(struct months *, int month, int day);		// è®¡ç®—åˆ°æˆªæ­¢æ—¥çš„å¤©æ•°
 
 struct months {
-	char name[LEN];					// ÔÂ·İÃû
-	char abbreviation[3];			// ÔÂ·İÃûµÄ3 ¸ö×ÖÄ¸ËõĞ´
-	int  days;						// ¸ÃÔÂµÄÌìÊı
-	int  sn;						// ÔÂ·İºÅ
+	char name[LEN];					// æœˆä»½å
+	char abbreviation[3];			// æœˆä»½åçš„3 ä¸ªå­—æ¯ç¼©å†™
+	int  days;						// è¯¥æœˆçš„å¤©æ•°
+	int  sn;						// æœˆä»½å·
 };
 
 struct months common_year[MONTH] = {
@@ -57,11 +57,10 @@ struct months leap_year[MONTH] = {
 	{  "November", "Nov", 30, 11 },
 	{  "December", "Dec", 31, 12 },
 };
+
 int main(void)
 {
-	int year = 0;
-	int month = 0;
-	int day = 0;
+	int year = 0, month = 0, day = 0;
 	int days_ct = 0;
 	struct months * month_info;
 
@@ -72,7 +71,7 @@ int main(void)
 		month = get_month();
 		day = get_day(month, month_info);
 		days_ct = calc_date(month_info, month, day);
-		printf("%d days in this year to %d.%d.%d.\n", days_ct, year, month, day);
+		printf("%d days in %d.1.1 to %d.%d.%d.\n", days_ct, year, month, day);
 		printf("Enter next year(0 to quit):\n");
 	}
 
@@ -81,7 +80,7 @@ int main(void)
 
 int get_year()
 {
-	// »ñÈ¡Ò»¸öÄê·İ£»¼ì²é³ÌĞòÍË³öÌõ¼ş£»Çå¿ÕÊäÈë»º³åÇø
+	// è·å–ä¸€ä¸ªå¹´ä»½ï¼›æ£€æŸ¥ç¨‹åºé€€å‡ºæ¡ä»¶ï¼›æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
 	int year = 0;
 	while ((scanf("%d", &year)) != 1)
 	{
@@ -92,11 +91,9 @@ int get_year()
 	return year;
 }
 
-
-
 int get_month()
 {
-	// ¼ì²âÊäÈëÊÇ·ñÎªÔÂ·İÆ´Ğ´»òÔÂ·İËõĞ´£»½«ÊäÈë×ª»»ÎªÊı×Ö£¬¼ì²âÊÇ·ñÎªºÏ·¨ÔÂ·İ£»Çå¿ÕÊäÈë»º³åÇø
+	// æ£€æµ‹è¾“å…¥æ˜¯å¦ä¸ºæœˆä»½æ‹¼å†™æˆ–æœˆä»½ç¼©å†™ï¼›å°†è¾“å…¥è½¬æ¢ä¸ºæ•°å­—ï¼Œæ£€æµ‹æ˜¯å¦ä¸ºåˆæ³•æœˆä»½ï¼›æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
 	char month[LEN];
 	int i_month = 0;
 	int find = 0;
@@ -135,7 +132,7 @@ int get_month()
 
 int get_day(int month, struct months * month_info)
 {
-	// »ñÈ¡Ò»¸öÌìÊı£»¼ì²éÌìÊıºÏ·¨£»Çå¿ÕÊäÈë»º³åÇø
+	// è·å–ä¸€ä¸ªå¤©æ•°ï¼›æ£€æŸ¥å¤©æ•°åˆæ³•ï¼›æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
 	int day = 0;
 	int max = (month_info + month)->days;
 
@@ -158,17 +155,20 @@ int get_day(int month, struct months * month_info)
 
 void eat_line()
 {
+    // æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
 	while (getchar() != '\n')
 		continue;
 }
 
 int is_leap(int year)
 {
+    // èƒ½è¢«4 æ•´é™¤çš„å¹´ä»½ä¸ºé—°å¹´
 	return ((year % 4) == 0);
 }
 
 int calc_date(struct months * month_info, int month, int day)
 {
+    // è®¡ç®—åˆ°æˆªæ­¢æ—¥çš„æ€»å¤©æ•°
 	int days_ct = 0;
 	for (int i = 0; i < month - 1; i++)
 	{
