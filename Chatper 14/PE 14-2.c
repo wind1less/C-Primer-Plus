@@ -10,15 +10,15 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define LEN 10														// 用于存储月份名的字符数组
-#define MONTH 12													// 一年内的月数
+#define LEN 10											// 用于存储月份名的字符数组
+#define MONTH 12										// 一年内的月数
 
-int get_year();														// 获取年月日输入并检查有效性
+int get_year();											// 获取年月日输入并检查有效性
 int get_month();
 int get_day(int month, struct months *);
 
-void eat_line();													// 清空输入缓冲区
-int is_leap(int year);											// 计算是否为闰年
+void eat_line();										// 清空输入缓冲区
+int is_leap(int year);									// 计算是否为闰年
 int calc_date(struct months *, int month, int day);		// 计算到截止日的天数
 
 struct months {
