@@ -1,41 +1,41 @@
-// һ���ı��ļ��б�����һ������ӵ���Ϣ��
-// ÿ�����ݶ����������У�4 Jessie Joybat 5 2 1 1
-// ��һ������Ա�ţ��䷶Χ��0~18��
-// ��2 ������Ա����
-// ��3 ������Ա���ա������ն���һ�����ʡ�
-// ��4 ���ǹٷ�ͳ�Ƶ���Ա�ϳ�������
-// ����3 ��ֱ��ǻ��������������ʹ�㣨RBI����
+// 一个文本文件中保存着一个垒球队的信息。
+// 每行数据都是这样排列：4 Jessie Joybat 5 2 1 1
+// 第一项是球员号，其范围是0~18。
+// 第2 项是球员的名
+// 第3 项是球员的姓。名和姓都是一个单词。
+// 第4 项是官方统计的球员上场次数。
+// 接着3 项分别是击中数、走垒数和打点（RBI）。
 // 
-// �ļ����ܰ����ೡ���������ݣ�����ͬһλ��Ա�����ж������ݣ�����ͬһλ��Ա�Ķ�������֮�������������Ա�����ݡ�
-// ��дһ�����򣬰����ݴ��浽һ�����ݽṹ�С��ýṹ�еĳ�ԱҪ�ֱ��ʾ��Ա�������ա��ϳ������������������Ͱ����ʡ�
-// ����ʹ����Ա����Ϊ������������ó���Ҫ�����ļ���β����ͳ��ÿλ��Ա�ĸ����ۼ��ۺϡ�
+// 文件可能包含多场比赛的数据，所以同一位球员可能有多行数据，而且同一位球员的多行数据之间可能有其他球员的数据。
+// 编写一个程序，把数据储存到一个数据结构中。该结构中的成员要分别表示球员的名、姓、上场次数、走垒数、打点和安打率。
+// 可以使用球员号作为数组的索引。该程序要读到文件结尾，并统计每位球员的各项累计综合。
 // 
-// Ҫʵ����Щ���ܣ���򵥵ķ����ǰѽṹ�����ݶ���ʼ��Ϊ�㣬���ļ��е����ݶ�����ʱ�����У�Ȼ���������Ӧ�Ľṹ�С�
-// ��������ļ���Ӧ����ÿλ��Ա�İ����ʣ����Ѽ��������浽�ṹ����Ӧ��Ա�С����㰲����������Ա���ۼƻ����������ϳ��ۼƴ���������һ�����������㡣
-// ��󣬳�����������ӵ�ͳ�����ݣ�һ����ʾһλ��Ա���ۼ����ݡ�
+// 要实现这些功能，最简单的方法是把结构的内容都初始化为零，把文件中的数据读入临时变量中，然后将其加入相应的结构中。
+// 程序读完文件后，应计算每位球员的安打率，并把计算结果储存到结构的相应成员中。计算安打率是用球员的累计击中数除以上场累计次数。这是一个浮点数计算。
+// 最后，程序结合整个球队的统计数据，一行显示一位球员的累计数据。
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define SLEN 20						// �洢�������ַ����鳤��
-#define FILELEN 20					// �洢�ļ������ַ����鳤��
-#define PLAYER 19					// ��Ա����
-#define LINE 128					// ���ļ��ж�ȡһ������ʱ��������ַ���
+#define SLEN 20						// 存储姓名的字符数组长度
+#define FILELEN 20					// 存储文件名的字符数组长度
+#define PLAYER 19					// 球员数量
+#define LINE 128					// 从文件中读取一行数据时单行最大字符数
 
-void update_info(struct team_info *, FILE *);												// ���ļ������ж�ȡ���ݲ���������ܵ������Ϣ�ṹ����
-int find_player(struct team_info * sb_team, char *firname, char *surname);					// ��ÿ���е���Ա����Ѱ����Ա�������Ϣ�����е�����
-void calc_bat(struct team_info *);															// ���㰲����
-void show_info(struct team_info *);															// ���ո�ʽ��ӡ������Ϣ
+void update_info(struct team_info *, FILE *);												// 从文件中逐行读取数据并分析后汇总到球队信息结构数组
+int find_player(struct team_info * sb_team, char *firname, char *surname);					// 从每行中的球员姓名寻找球员在球队信息数组中的索引
+void calc_bat(struct team_info *);															// 计算安打率
+void show_info(struct team_info *);															// 按照格式打印所有信息
 
 struct team_info {
-	char firname[SLEN];		// ����һ������
-	char surname[SLEN];		// �գ�һ������
-	int on_game;			// �ϳ�����
-	int hit;				// ������
-	int walk_home;			// ������
-	int RBI;				// ���
-	float batting_avg;		// ������
+	char firname[SLEN];		// 名，一个单词
+	char surname[SLEN];		// 姓，一个单词
+	int on_game;			// 上场次数
+	int hit;				// 击中数
+	int walk_home;			// 走垒数
+	int RBI;				// 打点
+	float batting_avg;		// 安打率
 };
 
 int main(void)
@@ -84,11 +84,11 @@ int main(void)
 
 void update_info(struct team_info * sb_team, FILE * fp)
 {
-	// ���ļ������ж�ȡ���ݲ���������ܵ������Ϣ�ṹ����
+	// 从文件中逐行读取数据并分析后汇总到球队信息结构数组
 	char line[LINE];
 	char analyse[7][SLEN];
 
-	// �Ƿ���ļ�
+	// 是否空文件
 	rewind(fp);
 	if (fgets(line, LINE, fp) == NULL || *line == EOF)
 	{
@@ -96,7 +96,7 @@ void update_info(struct team_info * sb_team, FILE * fp)
 		exit(1);
 	}
 
-	// ��ȡ���� - ����ַ��� - �ۼƸ�������
+	// 读取数据 - 拆分字符行 - 累计各项数据
 	rewind(fp);
 	while (fgets(line, LINE, fp) != NULL || *line == EOF)
 	{
@@ -126,7 +126,7 @@ void update_info(struct team_info * sb_team, FILE * fp)
 
 int find_player(struct team_info * sb_team, char *firname, char *surname)
 {
-	// // ��ÿ���е���Ա����Ѱ����Ա�������Ϣ�����е�����
+	// // 从每行中的球员姓名寻找球员在球队信息数组中的索引
 	for (int i = 0; i < PLAYER; i++)
 		if (strcmp(sb_team[i].firname, firname) == 0 && (strcmp(sb_team[i].surname, surname) == 0))
 			return i;
@@ -135,14 +135,14 @@ int find_player(struct team_info * sb_team, char *firname, char *surname)
 
 void calc_bat(struct team_info * sb_team)
 {
-	// ���㰲����
+	// 计算安打率
 	for (int i = 0; i < PLAYER; i++)
 		sb_team[i].batting_avg = (float)sb_team[i].hit / (float)sb_team[i].on_game;
 }
 
 void show_info(struct team_info * sb_team)
 {
-	// ���ո�ʽ��ӡ������Ϣ
+	// 按照格式打印所有信息
 	printf("\nNo.  Name               ON_GAME   HIT   WALK HOME   RBI   BATTING AVG\n");
 	for (int i = 0; i < PLAYER; i++)
 		printf("%2d   %7s %-9s    %5d   %3d   %9d   %3d   %11.2f\n", 
@@ -156,7 +156,7 @@ void show_info(struct team_info * sb_team)
 
 /************************************************************
 
-// ������ĿҪ����ļ�
+// 生成题目要求的文件
 
 #include <stdio.h>
 #include <stdlib.h>
