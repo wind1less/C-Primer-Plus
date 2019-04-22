@@ -7,11 +7,11 @@
 // b. 该程序显示下面的菜单：
 //		To choose a function, enter its letter label:
 //		a) Show number of empty seats					显示空座位数量
-//		b) Show list of empty seats						显示空座位列表
+//		b) Show list of empty seats					显示空座位列表
 //		c) Show alphabetical list of seats				按字母顺序显示已预订座位
-//		d) Assign a customer to a seat assignment		帮客户订座
-//		e) Delete a seat assignment						删除订座
-//		f) Quit											退出
+//		d) Assign a customer to a seat assignment			帮客户订座
+//		e) Delete a seat assignment					删除订座
+//		f) Quit								退出
 
 // c. 该程序能成功执行上面给出的菜单。选择d) 和e) 要提示用户进行额外输入，每个选项都能让用户中止输入。
 
