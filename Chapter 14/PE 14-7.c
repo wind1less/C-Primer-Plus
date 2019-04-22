@@ -1,9 +1,9 @@
-// ĞŞ¸Ä³ÌĞòÇåµ¥14.14£¬´ÓÎÄ¼şÖĞ¶ÁÈ¡Ã¿Ìõ¼ÇÂ¼²¢ÏÔÊ¾³öÀ´£¬ÔÊĞíÓÃ»§É¾³ı¼ÇÂ¼»òĞŞ¸Ä¼ÇÂ¼µÄÄÚÈİ¡£
-// Èç¹ûÉ¾³ı¼ÇÂ¼£¬°Ñ¿Õ³öÀ´µÄ¿Õ¼äÁô¸øÏÂÒ»¸öÒª¶ÁÈëµÄÄÚÈİ¡£
-// ÒªĞŞ¸ÄÏÖÓĞµÄÎÄ¼şÄÚÈİ£¬±ØĞëÓÃ¡°r+b¡±Ä£Ê½£¬¶ø²»ÊÇ¡°a+b¡±Ä£Ê½¡£
-// ¶øÇÒ£¬±ØĞë¸ü¼Ó×¢Òâ¶¨Î»ÎÄ¼şÖ¸Õë£¬·ÀÖ¹ĞÂ¼ÓÈëµÄ¼ÇÂ¼¸²¸ÇÏÖÓĞ¼ÇÂ¼¡£
-// ×î¼òµ¥µÄ·½·¨ÊÇ¸Ä¶¯´¢´æÔÚÄÚ´æÖĞµÄËùÓĞÊı¾İ£¬È»ºóÔÙ°Ñ×îºóµÄĞÅÏ¢Ğ´ÈëÎÄ¼ş¡£
-// ¸ú×ÙµÄÒ»¸ö·½·¨ÊÇÔÚbook ½á¹¹ÖĞÌí¼ÓÒ»¸ö³ÉÔ±±íÊ¾ÊÇ·ñ¸ÃÏî±»É¾³ı¡£
+// ä¿®æ”¹ç¨‹åºæ¸…å•14.14ï¼Œä»æ–‡ä»¶ä¸­è¯»å–æ¯æ¡è®°å½•å¹¶æ˜¾ç¤ºå‡ºæ¥ï¼Œå…è®¸ç”¨æˆ·åˆ é™¤è®°å½•æˆ–ä¿®æ”¹è®°å½•çš„å†…å®¹ã€‚
+// å¦‚æœåˆ é™¤è®°å½•ï¼ŒæŠŠç©ºå‡ºæ¥çš„ç©ºé—´ç•™ç»™ä¸‹ä¸€ä¸ªè¦è¯»å…¥çš„å†…å®¹ã€‚
+// è¦ä¿®æ”¹ç°æœ‰çš„æ–‡ä»¶å†…å®¹ï¼Œå¿…é¡»ç”¨â€œr+bâ€æ¨¡å¼ï¼Œè€Œä¸æ˜¯â€œa+bâ€æ¨¡å¼ã€‚
+// è€Œä¸”ï¼Œå¿…é¡»æ›´åŠ æ³¨æ„å®šä½æ–‡ä»¶æŒ‡é’ˆï¼Œé˜²æ­¢æ–°åŠ å…¥çš„è®°å½•è¦†ç›–ç°æœ‰è®°å½•ã€‚
+// æœ€ç®€å•çš„æ–¹æ³•æ˜¯æ”¹åŠ¨å‚¨å­˜åœ¨å†…å­˜ä¸­çš„æ‰€æœ‰æ•°æ®ï¼Œç„¶åå†æŠŠæœ€åçš„ä¿¡æ¯å†™å…¥æ–‡ä»¶ã€‚
+// è·Ÿè¸ªçš„ä¸€ä¸ªæ–¹æ³•æ˜¯åœ¨book ç»“æ„ä¸­æ·»åŠ ä¸€ä¸ªæˆå‘˜è¡¨ç¤ºæ˜¯å¦è¯¥é¡¹è¢«åˆ é™¤ã€‚
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,12 +15,12 @@
 #define MAXBKS 100
 
 char * s_gets(char * st, int n);
-char select_operator(void);										// Ñ¡Ôñ²Ù×÷Ä£Ê½
-int find_title(struct book *sp, char *title, int count);		// ´ÓÏÖÓĞbook ÁĞ±íÖĞÑ°ÕÒÊäÈëµÄbook
-void add_record(struct book *);									// ĞÂÔöbook
-int del_record(struct book *, int count);						// É¾³ıbook
-void amend_record(struct book *, int count);					// ĞŞ¸Äbook
-void refresh(struct book library[MAXBKS], int count);			// Ã¿´Î²Ù×÷Íê³ÉºóË¢ĞÂbook ÁĞ±í
+char select_operator(void);										// é€‰æ‹©æ“ä½œæ¨¡å¼
+int find_title(struct book *sp, char *title, int count);		// ä»ç°æœ‰book åˆ—è¡¨ä¸­å¯»æ‰¾è¾“å…¥çš„book
+void add_record(struct book *);									// æ–°å¢book
+int del_record(struct book *, int count);						// åˆ é™¤book
+void amend_record(struct book *, int count);					// ä¿®æ”¹book
+void refresh(struct book library[MAXBKS], int count);			// æ¯æ¬¡æ“ä½œå®Œæˆååˆ·æ–°book åˆ—è¡¨
 
 struct book {
 	char title[MAXTITL];
@@ -31,14 +31,14 @@ struct book {
 int main(void)
 {
 	struct book library[MAXBKS];
-	int count = 0;								// ÀÛ¼Æbook µÄÊıÁ¿£¬ĞÂÔöÊ±¼Ó£¬É¾³ıÊ±¼õ
+	int count = 0;								// ç´¯è®¡book çš„æ•°é‡ï¼Œæ–°å¢æ—¶åŠ ï¼Œåˆ é™¤æ—¶å‡
 	FILE * pbooks;
-	int size = sizeof(struct book);				// ¼ÆËã½á¹¹µÄ×Ö½Ú´óĞ¡£¬×îºóĞ´ÈëÎÄ¼şµÄ¶ş½øÖÆ×Ö½ÚÊıÎª£¨¼ÇÂ¼µÄÊıÁ¿ * ½á¹¹µÄ×Ö½Ú´óĞ¡£©
-	int select = 0;								// Ñ¡ÔñµÄ²Ù×÷Ä£Ê½
+	int size = sizeof(struct book);				// è®¡ç®—ç»“æ„çš„å­—èŠ‚å¤§å°ï¼Œæœ€åå†™å…¥æ–‡ä»¶çš„äºŒè¿›åˆ¶å­—èŠ‚æ•°ä¸ºï¼ˆè®°å½•çš„æ•°é‡ * ç»“æ„çš„å­—èŠ‚å¤§å°ï¼‰
+	int select = 0;								// é€‰æ‹©çš„æ“ä½œæ¨¡å¼
 
 	if ((pbooks = fopen("book.dat", "r+b")) == NULL)
 	{
-		// ÕÒ²»µ½¶ÔÓ¦µÄÎÄ¼şÊ±ÍË³ö£»´Ë´¦ÓÃr+b, ÏÈ¶ÁºóĞ´£¬ÔÚ×îÖÕĞ´ÈëÎÄ¼şÊ±ĞèÒª½«ÎÄ¼şÎ»ÖÃÖ¸Õërewind£¬·ñÔò»á³ÉÎª×·¼ÓÄ£Ê½£»Èç¹ûÊ¹ÓÃw+b»áÉ¾³ıÔ­ÎÄ¼şÄÚÊı¾İ£»
+		// æ‰¾ä¸åˆ°å¯¹åº”çš„æ–‡ä»¶æ—¶é€€å‡ºï¼›æ­¤å¤„ç”¨r+b, å…ˆè¯»åå†™ï¼Œåœ¨æœ€ç»ˆå†™å…¥æ–‡ä»¶æ—¶éœ€è¦å°†æ–‡ä»¶ä½ç½®æŒ‡é’ˆrewindï¼Œå¦åˆ™ä¼šæˆä¸ºè¿½åŠ æ¨¡å¼ï¼›å¦‚æœä½¿ç”¨w+bä¼šåˆ é™¤åŸæ–‡ä»¶å†…æ•°æ®ï¼›
 		fputs("Can't open book.dat file\n", stderr);
 		exit(1);
 	}
@@ -46,7 +46,7 @@ int main(void)
 	rewind(pbooks);
 	while (count < MAXBKS && fread(&library[count], size, 1, pbooks) == 1)
 	{
-		// Ã»ÓĞ¼ÇÂ¼
+		// æ²¡æœ‰è®°å½•
 		if (count == 0)
 			puts("Current contents of book.dat:");
 		printf("< %s> by < %8s >: $%.2f\n", library[count].title, library[count].author, library[count].value);
@@ -54,14 +54,14 @@ int main(void)
 	}
 	if (count == MAXBKS)
 	{
-		// book Êı×éÂúÔ±
+		// book æ•°ç»„æ»¡å‘˜
 		fputs("The book.dat file is full.", stderr);
 		exit(2);
 	}
 
 	while ((select = select_operator()) != 'q')
 	{
-		// ¸ø³ö²Ù×÷ÁĞ±í£¬ÏìÓ¦²Ù×÷
+		// ç»™å‡ºæ“ä½œåˆ—è¡¨ï¼Œå“åº”æ“ä½œ
 		switch (select)
 		{
 		case 'n':
@@ -76,10 +76,10 @@ int main(void)
 			amend_record(library, count);
 			break;
 		}
-		refresh(library, count);		// Ã¿´ÎÍê³É²Ù×÷ºó¾ùË¢ĞÂbook ÁĞ±í
+		refresh(library, count);		// æ¯æ¬¡å®Œæˆæ“ä½œåå‡åˆ·æ–°book åˆ—è¡¨
 	}
 
-	rewind(pbooks);			// £¡£¡£¡´Ë´¦²»½«ÎÄ¼şÖ¸ÕëÁĞ±íÖØÖÃµÄ»°£¬ÏÂÒ»ĞĞµÄĞ´ÈëÊ¼ÖÕ»á±ä³É×·¼Ó
+	rewind(pbooks);			// ï¼ï¼ï¼æ­¤å¤„ä¸å°†æ–‡ä»¶æŒ‡é’ˆåˆ—è¡¨é‡ç½®çš„è¯ï¼Œä¸‹ä¸€è¡Œçš„å†™å…¥å§‹ç»ˆä¼šå˜æˆè¿½åŠ 
 	fwrite(library, size, count, pbooks);
 	fclose(pbooks);
 	puts("Bye.\n");
@@ -89,7 +89,7 @@ int main(void)
 
 void refresh(struct book library[MAXBKS], int count)
 {
-	// Ã¿´Î²Ù×÷Íê³ÉºóË¢ĞÂbook ÁĞ±í
+	// æ¯æ¬¡æ“ä½œå®Œæˆååˆ·æ–°book åˆ—è¡¨
 	puts("\n\nCurrent contents of book.dat:");
 	for (int i = 0; i < count; i++)
 		printf("< %s> by < %8s >: $%.2f\n", library[i].title, library[i].author, library[i].value);
@@ -98,7 +98,7 @@ void refresh(struct book library[MAXBKS], int count)
 
 char select_operator(void)
 {
-	// Ñ¡Ôñ²Ù×÷Ä£Ê½
+	// é€‰æ‹©æ“ä½œæ¨¡å¼
 	char select = 0;
 	
 	printf("Select a operator:\n");
@@ -115,12 +115,12 @@ char select_operator(void)
 			continue;
 	}
 
-	return tolower(select);				// Í¬Ê±Ö§³Ö´óĞ¡Ğ´
+	return tolower(select);				// åŒæ—¶æ”¯æŒå¤§å°å†™
 }
 
 void add_record(struct book * sp)
 {
-	// ×·¼ÓÒ»Ìõ¼ÇÂ¼
+	// è¿½åŠ ä¸€æ¡è®°å½•
 	puts("Please add new book titles.");
 	while (s_gets(sp->title, MAXTITL) == NULL || sp->title[0] == '\0')
 		puts("Invalid input,try again\n");
@@ -134,7 +134,7 @@ void add_record(struct book * sp)
 
 int del_record(struct book * sp, int count)
 {
-	// É¾³ıÒ»Ìõ¼ÇÂ¼£¬ºóĞøµÄ¼ÇÂ¼È«²¿ÏòÇ°ÒÆÒ»Î»£¨Ë÷Òı£©¡£
+	// åˆ é™¤ä¸€æ¡è®°å½•ï¼Œåç»­çš„è®°å½•å…¨éƒ¨å‘å‰ç§»ä¸€ä½ï¼ˆç´¢å¼•ï¼‰ã€‚
 	//struct book temp;
 	int del = 0;
 	char title[MAXTITL];
@@ -160,7 +160,7 @@ int del_record(struct book * sp, int count)
 
 void amend_record(struct book * sp, int count)
 {
-	// ĞŞ¸Ä¼ÇÂ¼
+	// ä¿®æ”¹è®°å½•
 	int amend = 0;
 	char title[MAXTITL];
 	puts("Which books do you want to amend?");
@@ -185,7 +185,7 @@ void amend_record(struct book * sp, int count)
 
 int find_title(struct book *sp, char *title, int count)
 {
-	// ´Óbook ÁĞ±íÀïÕÒµ½ÇëÇóµÄbook
+	// ä»book åˆ—è¡¨é‡Œæ‰¾åˆ°è¯·æ±‚çš„book
 	int find = -1;
 	for (int i = 0; i < count; i++)
 	{
