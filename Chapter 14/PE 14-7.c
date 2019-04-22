@@ -15,11 +15,11 @@
 #define MAXBKS 100
 
 char * s_gets(char * st, int n);
-char select_operator(void);										// 选择操作模式
+char select_operator(void);						// 选择操作模式
 int find_title(struct book *sp, char *title, int count);		// 从现有book 列表中寻找输入的book
-void add_record(struct book *);									// 新增book
-int del_record(struct book *, int count);						// 删除book
-void amend_record(struct book *, int count);					// 修改book
+void add_record(struct book *);						// 新增book
+int del_record(struct book *, int count);				// 删除book
+void amend_record(struct book *, int count);				// 修改book
 void refresh(struct book library[MAXBKS], int count);			// 每次操作完成后刷新book 列表
 
 struct book {
@@ -33,7 +33,7 @@ int main(void)
 	struct book library[MAXBKS];
 	int count = 0;								// 累计book 的数量，新增时加，删除时减
 	FILE * pbooks;
-	int size = sizeof(struct book);				// 计算结构的字节大小，最后写入文件的二进制字节数为（记录的数量 * 结构的字节大小）
+	int size = sizeof(struct book);						// 计算结构的字节大小，最后写入文件的二进制字节数为（记录的数量 * 结构的字节大小）
 	int select = 0;								// 选择的操作模式
 
 	if ((pbooks = fopen("book.dat", "r+b")) == NULL)
