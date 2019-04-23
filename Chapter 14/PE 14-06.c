@@ -32,9 +32,9 @@ struct team_info {
 	char firname[SLEN];		// 名，一个单词
 	char surname[SLEN];		// 姓，一个单词
 	int on_game;			// 上场次数
-	int hit;				// 击中数
+	int hit;			// 击中数
 	int walk_home;			// 走垒数
-	int RBI;				// 打点
+	int RBI;			// 打点
 	float batting_avg;		// 安打率
 };
 
