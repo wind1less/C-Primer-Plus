@@ -1,12 +1,12 @@
-// ��дһ�����򣬴���һ����������Ա�Ľṹģ�壺
-// a. ��1 ����Ա����ᱣ�պţ�
-// ��2 ����Ա��һ����3 ����Ա�Ľṹ����1 ����Ա����������2 ����Ա�����м�������3 ����Ա�����ա�
-// ��������ʼ��һ���ں�5 �������ͽṹ�����顣
-// �ó���������ĸ�ʽ��ӡ���ݣ�   Dribble, Flossie M. -- 302039823
-// ������м�����ֻ��ӡ���ĵ�1 ����ĸ�������һ���㣨.����
-// ���û���м��������ô�ӡ�㡣
-// ��дһ��������д�ӡ���ѽṹ���鴫�ݸ����������
-// b. �޸�a ���֣����ݽṹ��ֵ�����ǽṹ�ĵ�ַ��
+// 编写一个程序，创建一个有两个成员的结构模板：
+// a. 第1 个成员是社会保险号，
+// 第2 个成员是一个有3 个成员的结构，第1 个成员代表名，第2 个成员代表中间名，第3 个成员代表姓。
+// 创建并初始化一个内含5 个该类型结构的数组。
+// 该程序以下面的格式打印数据：   Dribble, Flossie M. -- 302039823
+// 如果有中间名，只打印它的第1 个字母，后面加一个点（.）；
+// 如果没有中间名，则不用打印点。
+// 编写一个程序进行打印，把结构数组传递给这个函数。
+// b. 修改a 部分，传递结构的值而不是结构的地址。
 
 #include <stdio.h>
 #include <string.h>
@@ -21,8 +21,8 @@ struct persion_info {
 	struct all_name name;
 };
 
-void ashow_info(struct persion_info * info);				// ��ʽa. �����ṹ�����ڵ���Ϣ������ʽ��ӡ
-void bshow_info(struct persion_info info[MEN]);				// ��ʽb. �����ṹ�����ڵ���Ϣ������ʽ��ӡ
+void ashow_info(struct persion_info * info);				// 方式a. 解析结构数组内的信息并按格式打印
+void bshow_info(struct persion_info info[MEN]);				// 方式b. 解析结构数组内的信息并按格式打印
 
 int main(void)
 {
@@ -45,7 +45,7 @@ int main(void)
 
 void ashow_info(struct persion_info * info)
 {
-	// ��ʽa. �����ṹ�����ڵ���Ϣ������ʽ��ӡ
+	// 方式a. 解析结构数组内的信息并按格式打印
 	for (int i = 0; i < MEN; i++)
 	{
 		printf("%*s %*s ", SLEN, (info + i)->name.surname, SLEN, (info + i)->name.firname);
@@ -59,7 +59,7 @@ void ashow_info(struct persion_info * info)
 
 void bshow_info(struct persion_info info[MEN])
 {
-	// ��ʽb. �����ṹ�����ڵ���Ϣ������ʽ��ӡ
+	// 方式b. 解析结构数组内的信息并按格式打印
 	for (int i = 0; i < MEN; i++)
 	{
 		printf("%*s %*s ", SLEN, info[i].name.surname, SLEN, info[i].name.firname);
