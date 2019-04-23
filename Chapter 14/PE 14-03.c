@@ -1,17 +1,17 @@
-// ĞŞ¸Ä³ÌĞòÇåµ¥14.2 ÖĞµÄÍ¼ÊéÄ¿Â¼³ÌĞò£¬Ê¹Æä°´ÕÕÊäÈëÍ¼ÊéµÄË³ĞòÊä³öÍ¼ÊéµÄĞÅÏ¢£¬
-// È»ºó°´ÕÕ±êÌâ×ÖÄ¸µÄÉùÃ÷Êä³öÍ¼ÊéµÄĞÅÏ¢£¬×îºó°´ÕÕ¼Û¸ñµÄÉıĞòÊä³öÍ¼ÊéµÄĞÅÏ¢¡£
+// ä¿®æ”¹ç¨‹åºæ¸…å•14.2 ä¸­çš„å›¾ä¹¦ç›®å½•ç¨‹åºï¼Œä½¿å…¶æŒ‰ç…§è¾“å…¥å›¾ä¹¦çš„é¡ºåºè¾“å‡ºå›¾ä¹¦çš„ä¿¡æ¯ï¼Œ
+// ç„¶åæŒ‰ç…§æ ‡é¢˜å­—æ¯çš„å£°æ˜è¾“å‡ºå›¾ä¹¦çš„ä¿¡æ¯ï¼Œæœ€åæŒ‰ç…§ä»·æ ¼çš„å‡åºè¾“å‡ºå›¾ä¹¦çš„ä¿¡æ¯ã€‚
 
 #include <stdio.h>
 #include <string.h>
 
-#define MAXTITL 40			// ÊéÃû³¤¶È
-#define MAXAUTL 40			// ×÷Õß³¤¶È
-#define MAXBKS 100			// Êé¼®µÄ×î´óÊıÁ¿
+#define MAXTITL 40			// ä¹¦åé•¿åº¦
+#define MAXAUTL 40			// ä½œè€…é•¿åº¦
+#define MAXBKS 100			// ä¹¦ç±çš„æœ€å¤§æ•°é‡
 
 char * s_gets(char * st, int n);
-void  output_order(struct book library[MAXBKS], int count);		// °´ÕÕÊäÈëË³ĞòÊä³ö
-void  output_fl(struct book library[MAXBKS], int count);			// °´ÕÕÊ××ÖÄ¸ÉıĞòÊä³ö
-void  output_value(struct book library[MAXBKS], int count);		// °´ÕÕ¼Û¸ñÉıĞòÊä³ö
+void  output_order(struct book library[MAXBKS], int count);		// æŒ‰ç…§è¾“å…¥é¡ºåºè¾“å‡º
+void  output_fl(struct book library[MAXBKS], int count);			// æŒ‰ç…§é¦–å­—æ¯å‡åºè¾“å‡º
+void  output_value(struct book library[MAXBKS], int count);		// æŒ‰ç…§ä»·æ ¼å‡åºè¾“å‡º
 
 struct book { char title[MAXTITL]; char author[MAXAUTL]; float value; };
 
@@ -72,7 +72,7 @@ char * s_gets(char * st, int n)
 void output_order(struct book library[MAXBKS], int count)
 {
 	for(int i = 0; i < count; i++)
-		printf("< %10s > by ¡°%10s¡±: $ %.2f\n", library[i].title, library[i].author, library[i].value);
+		printf("< %10s > by â€œ%10sâ€: $ %.2f\n", library[i].title, library[i].author, library[i].value);
 }
 
 void output_fl(struct book library[MAXBKS], int count)
@@ -92,7 +92,7 @@ void output_fl(struct book library[MAXBKS], int count)
 		}
 	}
 	for (int i = 0; i < count; i++)
-		printf("< %10s > by ¡°%10s¡±: $ %.2f\n", library[i].title, library[i].author, library[i].value);
+		printf("< %10s > by â€œ%10sâ€: $ %.2f\n", library[i].title, library[i].author, library[i].value);
 }
 
 void output_value(struct book library[MAXBKS], int count)
@@ -112,7 +112,7 @@ void output_value(struct book library[MAXBKS], int count)
 		}
 	}
 	for (int i = 0; i < count; i++)
-		printf("< %10s > by ¡°%10s¡±: $ %.2f\n", library[i].title, library[i].author, library[i].value);
+		printf("< %10s > by â€œ%10sâ€: $ %.2f\n", library[i].title, library[i].author, library[i].value);
 }
 
 
@@ -123,9 +123,9 @@ void output_value(struct book library[MAXBKS], int count)
 //
 //char * s_gets(char * st, int n);
 //
-//#define MAXTITL 40			// ÊéÃû³¤¶È
-//#define MAXAUTL 40			// ×÷Õß³¤¶È
-//#define MAXBKS 100			// Êé¼®µÄ×î´óÊıÁ¿
+//#define MAXTITL 40			// ä¹¦åé•¿åº¦
+//#define MAXAUTL 40			// ä½œè€…é•¿åº¦
+//#define MAXBKS 100			// ä¹¦ç±çš„æœ€å¤§æ•°é‡
 //
 //struct book { char title[MAXTITL]; char author[MAXAUTL]; float value; };
 //
@@ -153,7 +153,7 @@ void output_value(struct book library[MAXBKS], int count)
 //	{
 //		printf("\nHere is the list of your books:\n");
 //		for (index = 0; index < count; index++)
-//			printf("< %s > by ¡°%s¡±: $%.2f\n", library[index].title, library[index].author, library[index].value);
+//			printf("< %s > by â€œ%sâ€: $%.2f\n", library[index].title, library[index].author, library[index].value);
 //	}
 //	else
 //		printf("No books? Too bad.\n");
