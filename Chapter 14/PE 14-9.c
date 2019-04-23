@@ -1,40 +1,40 @@
-// ¾ŞÈËº½¿Õ¹«Ë¾µÄ»úÈºÓÉ12 ¸ö×ùÎ»µÄ·É»ú×é³É¡£ËüÃ¿Ìì·ÉĞĞÒ»¸öº½°à¡£
-// ¸ù¾İÏÂÃæµÄÒªÇó£¬±àĞ´Ò»¸ö×ùÎ»Ô¤¶¨³ÌĞò¡£
-// a. ¸Ã³ÌĞòÊ¹ÓÃÒ»¸öÄÚº¬12 ¸ö½á¹¹µÄÊı×é¡£Ã¿¸ö½á¹¹ÖĞ°üÀ¨£º
-//    Ò»¸ö³ÉÔ±±íÊ¾×ùÎ»±àºÅ¡¢Ò»¸ö³ÉÔ±±íÊ¾×ùÎ»ÊÇ·ñÒÑ±»Ô¤¶¨¡¢Ò»¸ö³ÉÔ±±íÊ¾Ô¤¶¨ÈËµÄÃû¡¢Ò»¸ö±íÊ¾ĞÕ¡£
-// b. ¸Ã³ÌĞòÏÔÊ¾ÏÂÃæµÄ²Ëµ¥£º
+// å·¨äººèˆªç©ºå…¬å¸çš„æœºç¾¤ç”±12 ä¸ªåº§ä½çš„é£æœºç»„æˆã€‚å®ƒæ¯å¤©é£è¡Œä¸€ä¸ªèˆªç­ã€‚
+// æ ¹æ®ä¸‹é¢çš„è¦æ±‚ï¼Œç¼–å†™ä¸€ä¸ªåº§ä½é¢„å®šç¨‹åºã€‚
+// a. è¯¥ç¨‹åºä½¿ç”¨ä¸€ä¸ªå†…å«12 ä¸ªç»“æ„çš„æ•°ç»„ã€‚æ¯ä¸ªç»“æ„ä¸­åŒ…æ‹¬ï¼š
+//    ä¸€ä¸ªæˆå‘˜è¡¨ç¤ºåº§ä½ç¼–å·ã€ä¸€ä¸ªæˆå‘˜è¡¨ç¤ºåº§ä½æ˜¯å¦å·²è¢«é¢„å®šã€ä¸€ä¸ªæˆå‘˜è¡¨ç¤ºé¢„å®šäººçš„åã€ä¸€ä¸ªè¡¨ç¤ºå§“ã€‚
+// b. è¯¥ç¨‹åºæ˜¾ç¤ºä¸‹é¢çš„èœå•ï¼š
 //		To choose a function, enter its letter label:
-//		a) Show number of empty seats					ÏÔÊ¾¿Õ×ùÎ»ÊıÁ¿
-//		b) Show list of empty seats						ÏÔÊ¾¿Õ×ùÎ»ÁĞ±í
-//		c) Show alphabetical list of seats				°´×ÖÄ¸Ë³ĞòÏÔÊ¾ÒÑÔ¤¶©×ùÎ»
-//		d) Assign a customer to a seat assignment		°ï¿Í»§¶©×ù
-//		e) Delete a seat assignment						É¾³ı¶©×ù
-//		f) Quit											ÍË³ö
-// c. ¸Ã³ÌĞòÄÜ³É¹¦Ö´ĞĞÉÏÃæ¸ø³öµÄ²Ëµ¥¡£Ñ¡Ôñd) ºÍe) ÒªÌáÊ¾ÓÃ»§½øĞĞ¶îÍâÊäÈë£¬Ã¿¸öÑ¡Ïî¶¼ÄÜÈÃÓÃ»§ÖĞÖ¹ÊäÈë¡£
-// d. Ö´ĞĞÌØ¶¨³ÌĞòºó£¬¸Ã³ÌĞòÔÙ´ÎÏÔÊ¾²Ëµ¥£¬³ı·ÇÓÃ»§Ñ¡Ôñf)¡£
+//		a) Show number of empty seats				æ˜¾ç¤ºç©ºåº§ä½æ•°é‡
+//		b) Show list of empty seats				æ˜¾ç¤ºç©ºåº§ä½åˆ—è¡¨
+//		c) Show alphabetical list of seats			æŒ‰å­—æ¯é¡ºåºæ˜¾ç¤ºå·²é¢„è®¢åº§ä½
+//		d) Assign a customer to a seat assignment		å¸®å®¢æˆ·è®¢åº§
+//		e) Delete a seat assignment				åˆ é™¤è®¢åº§
+//		f) Quit							é€€å‡º
+// c. è¯¥ç¨‹åºèƒ½æˆåŠŸæ‰§è¡Œä¸Šé¢ç»™å‡ºçš„èœå•ã€‚é€‰æ‹©d) å’Œe) è¦æç¤ºç”¨æˆ·è¿›è¡Œé¢å¤–è¾“å…¥ï¼Œæ¯ä¸ªé€‰é¡¹éƒ½èƒ½è®©ç”¨æˆ·ä¸­æ­¢è¾“å…¥ã€‚
+// d. æ‰§è¡Œç‰¹å®šç¨‹åºåï¼Œè¯¥ç¨‹åºå†æ¬¡æ˜¾ç¤ºèœå•ï¼Œé™¤éç”¨æˆ·é€‰æ‹©f)ã€‚
 
-// ¾ŞÈËº½¿Õ¹«Ë¾ĞèÒªÁíÒ»¼Ü·É»ú£¨ÈİÁ¿ÏàÍ¬£©£¬Ã¿Ìì·É4°à£¨º½°à102¡¢311¡¢444 ºÍ519£©¡£
-// °Ñ³ÌĞòÀ©Õ¹Îª¿ÉÒÔ´¦Àí4 ¸öº½°à¡£ÓÃÒ»¸ö¶¥²ã²Ëµ¥Ìá¹©º½°àÑ¡ÔñºÍÍË³ö¡£Ñ¡ÔñÒ»¸öÌØ¶¨º½°à£¬¾Í»á³öÏÖºÍ±à³ÌÁ·Ï°8 ÀàËÆµÄ²Ëµ¥¡£
-// µ«ÊÇ¸Ã²Ëµ¥ÒªÌí¼ÓÒ»¸öĞÂÑ¡Ïî£ºÈ·ÈÏ×ùÎ»·ÖÅä¡£¶øÇÒ£¬²Ëµ¥ÖĞµÄÍË³öÊÇ·µ»Ø¶¥²ã²Ëµ¥¡£
-// Ã¿´ÎÏÔÊ¾¶¼ÒªÖ¸Ã÷µ±Ç°ÕıÔÚ´¦ÀíµÄº½°àºÅ¡£ÁíÍâ£¬×ùÎ»·ÖÅäÏÔÊ¾ÒªÖ¸Ã÷È·ÈÏ×´Ì¬¡£
+// å·¨äººèˆªç©ºå…¬å¸éœ€è¦å¦ä¸€æ¶é£æœºï¼ˆå®¹é‡ç›¸åŒï¼‰ï¼Œæ¯å¤©é£4ç­ï¼ˆèˆªç­102ã€311ã€444 å’Œ519ï¼‰ã€‚
+// æŠŠç¨‹åºæ‰©å±•ä¸ºå¯ä»¥å¤„ç†4 ä¸ªèˆªç­ã€‚ç”¨ä¸€ä¸ªé¡¶å±‚èœå•æä¾›èˆªç­é€‰æ‹©å’Œé€€å‡ºã€‚é€‰æ‹©ä¸€ä¸ªç‰¹å®šèˆªç­ï¼Œå°±ä¼šå‡ºç°å’Œç¼–ç¨‹ç»ƒä¹ 8 ç±»ä¼¼çš„èœå•ã€‚
+// ä½†æ˜¯è¯¥èœå•è¦æ·»åŠ ä¸€ä¸ªæ–°é€‰é¡¹ï¼šç¡®è®¤åº§ä½åˆ†é…ã€‚è€Œä¸”ï¼Œèœå•ä¸­çš„é€€å‡ºæ˜¯è¿”å›é¡¶å±‚èœå•ã€‚
+// æ¯æ¬¡æ˜¾ç¤ºéƒ½è¦æŒ‡æ˜å½“å‰æ­£åœ¨å¤„ç†çš„èˆªç­å·ã€‚å¦å¤–ï¼Œåº§ä½åˆ†é…æ˜¾ç¤ºè¦æŒ‡æ˜ç¡®è®¤çŠ¶æ€ã€‚
 
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 
-#define NLEN 20			// ´¢´æĞÕÃûµÄ×Ö·ûÊı×éµÄ³¤¶È
-#define SEAT 12			// ·É»úÉÏµÄ×ùÎ»ÊıÁ¿
-#define FLIGHT 4		// º½°àÊıÁ¿
+#define NLEN 20			// å‚¨å­˜å§“åçš„å­—ç¬¦æ•°ç»„çš„é•¿åº¦
+#define SEAT 12			// é£æœºä¸Šçš„åº§ä½æ•°é‡
+#define FLIGHT 4		// èˆªç­æ•°é‡
 
-void eat_line();																			// Çå¿Õ»º³åÇø
-void show_menu(int flight);																			// ´òÓ¡²Ëµ¥
-char get_order(int flight);																			// »ñÈ¡Ö¸Áî
-int show_empty_seat(struct seat_info *, int num_or_list, int flight);									// ÏÔÊ¾¿ÕÎ»ĞÅÏ¢
-void show_rsv_seat(struct seat_info *, int flight);														// »ñÈ¡ÒÑÔ¤¶¨×ùÎ»²¢°´ÕÕ×ÖÄ¸Ë³ĞòÅÅĞòºóÏÔÊ¾
-void assign_seat(struct seat_info *, int flight);														// Ñ¯ÎÊ¿Í»§ĞÕÃû×ùÎ»ºÅ²¢Èë×ù
-void sit_down(struct seat_info * seat, char * firname, char * surname, int seat_sn, int flight);		// Èë×ù
-void del_seat(struct seat_info *, int flight);															// ºË¶Ô¿Í»§ĞÕÃû²¢È¡Ïû¶©×ù
+void eat_line();										// æ¸…ç©ºç¼“å†²åŒº
+void show_menu(int flight);									// æ‰“å°èœå•
+char get_order(int flight);									// è·å–æŒ‡ä»¤
+int show_empty_seat(struct seat_info *, int num_or_list, int flight);				// æ˜¾ç¤ºç©ºä½ä¿¡æ¯
+void show_rsv_seat(struct seat_info *, int flight);						// è·å–å·²é¢„å®šåº§ä½å¹¶æŒ‰ç…§å­—æ¯é¡ºåºæ’åºåæ˜¾ç¤º
+void assign_seat(struct seat_info *, int flight);							// è¯¢é—®å®¢æˆ·å§“ååº§ä½å·å¹¶å…¥åº§
+void sit_down(struct seat_info * seat, char * firname, char * surname, int seat_sn, int flight);	// å…¥åº§
+void del_seat(struct seat_info *, int flight);								// æ ¸å¯¹å®¢æˆ·å§“åå¹¶å–æ¶ˆè®¢åº§
 
 struct seat_info {
 	int seat_sn;
@@ -63,13 +63,13 @@ int main(void)
 
 	int seats = 0;
 	char order;
-	int airplane[FLIGHT] = { 102, 311, 444, 519 };		// º½°àºÅ
-	int FLT_NO;											// µ±Ç°º½°àºÅ
+	int airplane[FLIGHT] = { 102, 311, 444, 519 };		// èˆªç­å·
+	int FLT_NO;						// å½“å‰èˆªç­å·
 	
 	printf("Select a airplane in [102 311 444 519] (NAN to quit):\n");
 	while (scanf("%d", &FLT_NO) == 1)
 	{
-		int no_flight = 1;
+		int no_flight = 1;				// æœ‰æ— æ­¤èˆªç­
 		eat_line();
 		for (int i = 0; i < FLIGHT; i++)
 		{
@@ -84,7 +84,7 @@ int main(void)
 
 		while ((order = get_order(FLT_NO)) != 'f')
 		{
-			seats = show_empty_seat(seat, 3, FLT_NO);				// Ã¿´Î²Ù×÷ºó¾ù»ñÈ¡×ùÎ»Êı£¬±ÜÃâÎŞĞ§²Ù×÷
+			seats = show_empty_seat(seat, 3, FLT_NO);		// æ¯æ¬¡æ“ä½œåå‡è·å–åº§ä½æ•°ï¼Œé¿å…æ— æ•ˆæ“ä½œ
 			switch (order)
 			{
 			case 'a':
@@ -122,7 +122,7 @@ int main(void)
 
 void show_menu(int flight)
 {
-	// ´òÓ¡²Ëµ¥Ñ¡Ïî
+	// æ‰“å°èœå•é€‰é¡¹
 	printf("FLIGHT NUM: [ %d ] \n", flight);
 	puts("To choose a function, enter its letter label:");
 	puts("a) Show number of empty seats");
@@ -139,11 +139,11 @@ char get_order(int flight)
 	show_menu(flight);
 	while (scanf("%c", &order) == 1)
 	{
-		// ÒòÎª¶ÁÈ¡µÄÊÇ%c×Ö·û£¬ËùÒÔÏÂÃæÊÖ¶¯ºöÂÔ»»ĞĞ·û
+		// å› ä¸ºè¯»å–çš„æ˜¯%cå­—ç¬¦ï¼Œæ‰€ä»¥ä¸‹é¢æ‰‹åŠ¨å¿½ç•¥æ¢è¡Œç¬¦
 		if (order == '\n')
 			continue;
 		eat_line();
-		// Í¬Ê±ÏàÓ¦´óĞ¡Ğ´Ö¸Áî
+		// åŒæ—¶ç›¸åº”å¤§å°å†™æŒ‡ä»¤
 		if (strchr("abcdef", tolower(order)) == NULL)
 			printf("No this option, pls try again:\n");
 		else
@@ -155,9 +155,9 @@ char get_order(int flight)
 
 int show_empty_seat(struct seat_info * seat, int mode, int flight)
 { 
-	// mode 1£º´òÓ¡¿ÕÎ»µÄÊıÁ¿
-	// mode 2£º´òÓ¡¿ÕÎ»µÄÁĞ±í£»Ã¿ĞĞ´òÓ¡Ò»¶¨ÊıÁ¿µÄ¿ÕÎ»¡£
-	// mode 3£º½ö»ñÈ¡¿ÕÎ»Êı
+	// mode 1ï¼šæ‰“å°ç©ºä½çš„æ•°é‡
+	// mode 2ï¼šæ‰“å°ç©ºä½çš„åˆ—è¡¨ï¼›æ¯è¡Œæ‰“å°ä¸€å®šæ•°é‡çš„ç©ºä½ã€‚
+	// mode 3ï¼šä»…è·å–ç©ºä½æ•°
 	const int seat_per_line = 4;
 	int empty = 0;
 	if (mode == 2)
@@ -193,15 +193,15 @@ int show_empty_seat(struct seat_info * seat, int mode, int flight)
 
 void show_rsv_seat(struct seat_info * seat, int flight)
 {
-	// ´´½¨Ò»¸öĞÂÊı×é£¬½«ÒÑÔ¤¶¨µÄ×ùÎ»¿½±´ÖÁĞÂÊı×é
-	// °´ĞÕµÄ×ÖÄ¸Ë³ĞòÅÅĞòÒÑ¶¨×ùÎ»£»´òÓ¡ÒÑ¶¨×ùÎ»ÁĞ±í¡£
+	// åˆ›å»ºä¸€ä¸ªæ–°æ•°ç»„ï¼Œå°†å·²é¢„å®šçš„åº§ä½æ‹·è´è‡³æ–°æ•°ç»„
+	// æŒ‰å§“çš„å­—æ¯é¡ºåºæ’åºå·²å®šåº§ä½ï¼›æ‰“å°å·²å®šåº§ä½åˆ—è¡¨ã€‚
 	struct seat_info seat_copy[SEAT];
 	struct seat_info temp;
 	int reserve = 0;
 	int i = 0;
 	for (i = 0; i < SEAT; i++)
 	{
-		// ¿½±´ÒÑÔ¤¶¨×ùÎ»
+		// æ‹·è´å·²é¢„å®šåº§ä½
 		if (seat[i].reserve)
 		{
 			seat_copy[reserve] = seat[i];
@@ -215,7 +215,7 @@ void show_rsv_seat(struct seat_info * seat, int flight)
 
 	for (i = 0; i < reserve; i++)
 	{
-		// °´×ÖÄ¸ÅÅĞò
+		// æŒ‰å­—æ¯æ’åº
 		for (int n = i; n < reserve; n++)
 		{
 			if (strcmp(seat_copy[i].firname, seat_copy[n].firname) > 0)
@@ -235,10 +235,10 @@ void show_rsv_seat(struct seat_info * seat, int flight)
 
 void assign_seat(struct seat_info * seat, int flight)
 {
-	// ¶©×ù
-	// Ìá¹©ÊÖ¶¯Ñ¡×ù»ò×Ô¶¯Ñ¡×ù
-	// ×Ô¶¯Ñ¡×ùÊÇÎ±Ëæ»ú£¬ÔİÎ´Ìí¼ÓÊµÊ±Ëæ»ú
-	// ×¢ÒâÁ½ÖÖÑ¡×ù·½Ê½¶¼Òª¼ì²â×ùÎ»³åÍ»
+	// è®¢åº§
+	// æä¾›æ‰‹åŠ¨é€‰åº§æˆ–è‡ªåŠ¨é€‰åº§
+	// è‡ªåŠ¨é€‰åº§æ˜¯ä¼ªéšæœºï¼Œæš‚æœªæ·»åŠ å®æ—¶éšæœº
+	// æ³¨æ„ä¸¤ç§é€‰åº§æ–¹å¼éƒ½è¦æ£€æµ‹åº§ä½å†²çª
 	char firname[NLEN], surname[NLEN];
 	int seat_sn = 0;
 	puts("What's your name?");
@@ -272,7 +272,7 @@ void assign_seat(struct seat_info * seat, int flight)
 
 void sit_down(struct seat_info * seat, char * firname, char * surname, int seat_sn, int flight)
 {
-	// ½«ĞÕÃûÉèÖÃµ½×ùÎ»ÉÏ£¬ÇĞ»»Ô¤¶¨×´Ì¬
+	// å°†å§“åè®¾ç½®åˆ°åº§ä½ä¸Šï¼Œåˆ‡æ¢é¢„å®šçŠ¶æ€
 	strcpy(seat[seat_sn].firname, firname);
 	strcpy(seat[seat_sn].surname, surname);
 	seat[seat_sn].reserve = 1;
@@ -282,14 +282,14 @@ void sit_down(struct seat_info * seat, char * firname, char * surname, int seat_
 
 void del_seat(struct seat_info * seat, int flight)
 {
-	// É¾³ı¿Í»§µÄ¶©×ù
+	// åˆ é™¤å®¢æˆ·çš„è®¢åº§
 	char firname[NLEN], surname[NLEN];
 	int seat_sn = -1;
 	puts("What's your name?");
 	scanf("%s %s", &firname, &surname);
 	eat_line();
 
-	// ¼ì²â¿Í»§ĞÅÏ¢
+	// æ£€æµ‹å®¢æˆ·ä¿¡æ¯
 	for (int i = 0; i < SEAT; i++)
 	{
 		if (seat[i].reserve == 1)
@@ -300,11 +300,11 @@ void del_seat(struct seat_info * seat, int flight)
 	}
 	
 	if (seat_sn == -1)
-		// Ã»ÓĞÕÒµ½¿Í»§ĞÅÏ¢
+		// æ²¡æœ‰æ‰¾åˆ°å®¢æˆ·ä¿¡æ¯
 		puts("Sorry sir, you havn't reserve a seat.\n");
 	else
 	{
-		// Çå¿ÕĞÕÃû£¬¸Ä±äÔ¤¶¨×´Ì¬£¬´òÓ¡É¾³ı¶©µ¥µÄĞÅÏ¢¡£
+		// æ¸…ç©ºå§“åï¼Œæ”¹å˜é¢„å®šçŠ¶æ€ï¼Œæ‰“å°åˆ é™¤è®¢å•çš„ä¿¡æ¯ã€‚
 		seat[seat_sn].firname[0] = '\0';
 		seat[seat_sn].surname[0] = '\0';
 		seat[seat_sn].reserve = 0;
@@ -316,7 +316,7 @@ void del_seat(struct seat_info * seat, int flight)
 
 void eat_line()
 {
-	// Çå¿ÕÊäÈë»º³åÇø
+	// æ¸…ç©ºè¾“å…¥ç¼“å†²åŒº
 	while (getchar() != '\n')
 		continue;
 }
