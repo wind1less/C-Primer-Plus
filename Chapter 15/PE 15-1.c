@@ -1,6 +1,6 @@
-// ��дһ���������Ѷ������ַ���ת��Ϊһ����ֵ�����磬���������䣺
+// 编写一个函数，把二进制字符串转换为一个数值。例如，有下面的语句：
 // char * pbin = "01001001";
-// ��ô��pbin ��Ϊ�������ݸ��ú�������Ӧ�÷���һ��int ���͵�ֵ73��
+// 那么把pbin 作为参数传递给该函数后，它应该返回一个int 类型的值73。
 
 #include <stdio.h>
 #include <string.h>
@@ -21,12 +21,18 @@ int main(void)
 
 int invert_to_num(char * st)
 {
-	// �����ȡ�ַ����е��ַ���-'0' �õ���Ӧ���֣���������λ�õ�ʮ����ֵ���ۼӵõ����
+	// 倒序读取字符串中的字符，-'0' 得到对应数字，乘以所在位置的十进制值，累加得到结果
 	int num = 0;
+	int single_num = 0;
+	int weight = 0;
 	int length = strlen(st);
 
 	for (int i = 0; i < length; i++)
-		num += ((int)(st[length - 1 - i] - '0') * (int)pow(2, i));
-
+	{
+		single_num = st[length - 1 -i] - '0';
+		weight = (int) pow(2, i);
+		num += single_num * weight;
+	}
+	
 	return num;
 }
