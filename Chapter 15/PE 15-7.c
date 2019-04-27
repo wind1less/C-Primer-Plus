@@ -2,20 +2,20 @@
 #include <string.h>
 #include <ctype.h>
 
-#define ID_MASK		0xFF
-#define ID_RESET    0xFFF00
-#define SIZE_MASK   0x7F00
+#define ID_MASK	      0xFF
+#define ID_RESET      0xFFF00
+#define SIZE_MASK     0x7F00
 #define SIZE_RESET    0xF80FF
-#define LEFT		0x00000
-#define CENTER      0x08000
-#define RIGHT       0x10000
-#define ALIGN_MASK  0x18000
-#define REGULAR     0x00000
-#define BOLD		0x20000
-#define ITALIC		0x40000
-#define UNDERLINE	0x80000
-#define STYLE_MASK	0xE0000
-#define SIZE_SHIFT	8
+#define LEFT	      0x00000
+#define CENTER        0x08000
+#define RIGHT         0x10000
+#define ALIGN_MASK    0x18000
+#define REGULAR       0x00000
+#define BOLD	      0x20000
+#define ITALIC	      0x40000
+#define UNDERLINE     0x80000
+#define STYLE_MASK    0xE0000
+#define SIZE_SHIFT    8
 
 typedef unsigned long font;
 
@@ -70,7 +70,7 @@ char get_choice(const char * str)
 	eat_line();
 	while (strchr(str, ch) == NULL)
 	{
-		printf("Please enter one of the following: %s\n", str);
+	    printf("Please enter one of the following: %s\n", str);
 		ch = tolower(getchar());
 		eat_line();
 	}
@@ -143,16 +143,3 @@ void get_align(font * f)
 	default:fprintf(stderr, "alignment problem\n");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
