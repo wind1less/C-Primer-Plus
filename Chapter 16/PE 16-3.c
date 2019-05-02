@@ -1,14 +1,14 @@
-// ¼«×ø±êÓÃÏòÁ¿µÄÄ££¨¼´ÏòÁ¿µÄ³¤¶È£©ºÍÏòÁ¿Ïà¶Ôx ÖáÄæÊ±ÕëÐý×ªµÄ½Ç¶ÈÀ´ÃèÊö¸ÃÏòÁ¿¡£
-// Ö±½Ç×ø±êÓÃÏòÁ¿µÄx ÖáºÍy ÖáµÄ×ø±êÀ´ÃèÊö¸ÃÏòÁ¿¡£
-// ±àÐ´Ò»¸ö³ÌÐò£¬¶ÁÈ¡ÏòÁ¿µÄÄ£ºÍ½Ç¶È£¨µ¥Î»£º¶È£©£¬È»ºóÏÔÊ¾x ÖáºÍy ÖáµÄ×ø±ê¡£
-// Ïà¹Ø·½³Ì£º x = r * cos A ; y = r * sin A
-// ÐèÒªÒ»¸öº¯ÊýÀ´Íê³É×ª»»£¬¸Ãº¯Êý½ÓÊÜÒ»¸ö°üº¬¼«×ø±êµÄ½á¹¹£¬²¢·µ»ØÒ»¸ö°üº¬Ö±½Ç×ø±êµÄ½á¹¹£¨»ò·µ»ØÖ¸Ïò¸Ã½á¹¹µÄÖ¸Õë£©¡£
+// æžåæ ‡ç”¨å‘é‡çš„æ¨¡ï¼ˆå³å‘é‡çš„é•¿åº¦ï¼‰å’Œå‘é‡ç›¸å¯¹x è½´é€†æ—¶é’ˆæ—‹è½¬çš„è§’åº¦æ¥æè¿°è¯¥å‘é‡ã€‚
+// ç›´è§’åæ ‡ç”¨å‘é‡çš„x è½´å’Œy è½´çš„åæ ‡æ¥æè¿°è¯¥å‘é‡ã€‚
+// ç¼–å†™ä¸€ä¸ªç¨‹åºï¼Œè¯»å–å‘é‡çš„æ¨¡å’Œè§’åº¦ï¼ˆå•ä½ï¼šåº¦ï¼‰ï¼Œç„¶åŽæ˜¾ç¤ºx è½´å’Œy è½´çš„åæ ‡ã€‚
+// ç›¸å…³æ–¹ç¨‹ï¼š x = r * cos A ; y = r * sin A
+// éœ€è¦ä¸€ä¸ªå‡½æ•°æ¥å®Œæˆè½¬æ¢ï¼Œè¯¥å‡½æ•°æŽ¥å—ä¸€ä¸ªåŒ…å«æžåæ ‡çš„ç»“æž„ï¼Œå¹¶è¿”å›žä¸€ä¸ªåŒ…å«ç›´è§’åæ ‡çš„ç»“æž„ï¼ˆæˆ–è¿”å›žæŒ‡å‘è¯¥ç»“æž„çš„æŒ‡é’ˆï¼‰ã€‚
 
 #include <stdio.h>
 #include <math.h>
 
 #define PI 4 * (atan(1))
-#define RADIAN(X) ((X) * (PI / 180))			// ½Ç¶È×ª»»Îª»¡¶È
+#define RADIAN(X) ((X) * (PI / 180))			// è§’åº¦è½¬æ¢ä¸ºå¼§åº¦
 
 struct polar {
 	double dist;
@@ -41,7 +41,7 @@ int main(void)
 
 struct recta invert_coor(struct polar b)
 {
-	// ×¢Òâ£ºÈý½Çº¯Êý½ÓÊÜµÄ²ÎÊýÓ¦ÊÇ»¡¶ÈÖµ¡£
+	// æ³¨æ„ï¼šä¸‰è§’å‡½æ•°æŽ¥å—çš„å‚æ•°åº”æ˜¯å¼§åº¦å€¼ã€‚
 	struct recta a;
 	a.x_coordinate = b.dist * cos(RADIAN(b.angle));	
 	a.y_coordinate = b.dist * sin(RADIAN(b.angle));
