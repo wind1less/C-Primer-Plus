@@ -1,46 +1,23 @@
-// ¼«×ø±êÓÃÏòÁ¿µÄÄ££¨¼´ÏòÁ¿µÄ³¤¶È£©ºÍÏòÁ¿Ïà¶Ôx ÖáÄæÊ±ÕëĞı×ªµÄ½Ç¶ÈÀ´ÃèÊö¸ÃÏòÁ¿¡£
-// Ö±½Ç×ø±êÓÃÏòÁ¿µÄx ÖáºÍy ÖáµÄ×ø±êÀ´ÃèÊö¸ÃÏòÁ¿¡£
-// ±àĞ´Ò»¸ö³ÌĞò£¬¶ÁÈ¡ÏòÁ¿µÄÄ£ºÍ½Ç¶È£¨µ¥Î»£º¶È£©£¬È»ºóÏÔÊ¾x ÖáºÍy ÖáµÄ×ø±ê¡£
-// Ïà¹Ø·½³Ì£º x = r * cos A ; y = r * sin A
-// ĞèÒªÒ»¸öº¯ÊıÀ´Íê³É×ª»»£¬¸Ãº¯Êı½ÓÊÜÒ»¸ö°üº¬¼«×ø±êµÄ½á¹¹£¬²¢·µ»ØÒ»¸ö°üº¬Ö±½Ç×ø±êµÄ½á¹¹£¨»ò·µ»ØÖ¸Ïò¸Ã½á¹¹µÄÖ¸Õë£©¡£
+// ä¸¤æ•°çš„è°ƒå’Œå¹³å‡æ•°è¿™æ ·è®¡ç®—ï¼šå…ˆå¾—åˆ°ä¸¤æ•°çš„å€’æ•°ï¼Œç„¶åè®¡ç®—ä¸¤ä¸ªå€’æ•°çš„å¹³å‡å€¼ï¼Œæœ€åå–è®¡ç®—ç»“æœçš„å€’æ•°ã€‚
+// ä½¿ç”¨#define æŒ‡ä»¤å®šä¹‰ä¸€ä¸ªå®â€œå‡½æ•°â€ï¼Œæ‰§è¡Œè¯¥è®¡ç®—ã€‚ç¼–å†™ä¸€ä¸ªç®€å•çš„ç¨‹åºæµ‹è¯•è¯¥å®ã€‚
 
 #include <stdio.h>
-#include <math.h>
 
-struct polar {
-	double dist;
-	double angle;
-};
-
-struct recta{
-	double x_coordinate;
-	double y_coordinate;
-}
-
-struct recta invert_coor(struct polar);
+#define  harmonic_average(X, Y) (1 / (((1 / X) + (1 / Y)) / 2))				// è®¡ç®—è°ƒå’Œå¹³å‡æ•°
 
 int main(void)
 {
-	struct polar a;
-	struct recta b;
-	printf("Provide a polar coordinate to convert to a rectangle coordinate:\n");
-	printf("Now enter distance and angle:(q to quit):");
-	while (scanf("%f %f", &a.dist, &a.angle) == 2)
+	float num1, num2;
+
+	puts("Enter two number to calc its harmonic average(q to quit):");
+	while (scanf("%f %f", &num1, &num2) == 2)
 	{
-		b = invert_coor(a);
-		printf("Rectangular coordinate : X - %.2f   Y - %.2f\n", b.x_coordinate, b.y_coordinate);
-		printf("Enter next pair of polar coordinate:(q to quit):\n");
+		while (getchar() != '\n')
+			continue;
+		printf("%.2f and %.2f has harmonic average: %.4f.\n", num1, num2, harmonic_average(num1, num2));
+		printf("Enter next pair of number(q to quit):\n");
 	}
 	printf("Bye!");
-
+	
 	return 0;
-}
-
-struct recta invert_coor(struct polar b)
-{
-	struct recta a;
-	a.x_coordinate = b.dist * cos(angle);
-	a.y_coordinate = b.dist * sin(angle);
-
-	return a;
 }
