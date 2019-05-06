@@ -10,8 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//#include "list.h"
-#include "标头.h"
+#include "list.h"
 
 void showmovies(Item item);
 void eat_line(void);
