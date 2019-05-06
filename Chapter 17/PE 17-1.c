@@ -1,3 +1,6 @@
+// 修改程序清单17.2，让该程序既能正序也能逆序显示电影列表。
+// 一种方法是修改链表的定义，可以双向遍历链表。另一种方法是用递归。
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
