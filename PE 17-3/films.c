@@ -1,3 +1,11 @@
+// 假设list.h 使用下面的list 定义：
+// #define MAXSIZE 100
+// typedef struct list{
+    Item entries[MAXSIZE];
+    int items;
+} List;
+// 重写list.c 中的函数以适应新的定义，并通过films.c 测试最终的代码
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
