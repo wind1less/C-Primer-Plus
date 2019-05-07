@@ -13,26 +13,26 @@
 #include "tree.h"
 
 bool update_word(char * st, Tree * ptree);		// 将读取到的单词写入二叉树，检测单词是否已存在于二叉树，执行递增项或新加项
-void print_item(Item item);						// 打印单个节点内对象的信息
+void print_item(Item item);				// 打印单个节点内对象的信息
 
-int get_menu(void);								// 显示用户操作菜单，记录用户操作
-void eat_line(void);							// 配合scanf() 函数后，清空输入缓冲区
-void show_all_words(Tree * ptree);				// 显示二叉树内所有节点的信息
-void show_word_count(Tree * ptree);				// 显示二叉树内目标对象的计数
+int get_menu(void);					// 显示用户操作菜单，记录用户操作
+void eat_line(void);					// 配合scanf() 函数后，清空输入缓冲区
+void show_all_words(Tree * ptree);			// 显示二叉树内所有节点的信息
+void show_word_count(Tree * ptree);			// 显示二叉树内目标对象的计数
 
 int main(void)
 {
-	Tree ptree;								// 目标链表二叉树
-	FILE * pf;								// 目标文件指针
+	Tree ptree;					// 目标链表二叉树
+	FILE * pf;					// 目标文件指针
 	char file_name[40] = "book1.txt";		// 目标文件
-	int choice;								// 记录菜单选择
+	int choice;					// 记录菜单选择
 
-	bool in_word = false;					// 标记当前从文件流中读取的字符是否位于单词中
-	char word[SLEN];						// 从文件中读取整个单词
-	int ch;									// 从文件中逐字读取
-	int word_index = 0;						// 单词的索引
+	bool in_word = false;				// 标记当前从文件流中读取的字符是否位于单词中
+	char word[SLEN];				// 从文件中读取整个单词
+	int ch;						// 从文件中逐字读取
+	int word_index = 0;				// 单词的索引
 
-	InitializeTree(&ptree);					// 初始化链表
+	InitializeTree(&ptree);				// 初始化链表
 
 	// 初始化文件指针
 	pf = fopen(file_name, "r");
