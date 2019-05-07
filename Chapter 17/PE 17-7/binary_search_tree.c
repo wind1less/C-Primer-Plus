@@ -25,14 +25,14 @@ int main(void)
 	Tree ptree;								// 目标链表二叉树
 	FILE * pf;								// 目标文件指针
 	char file_name[40] = "book1.txt";		// 目标文件
-	int choice;					// 记录菜单选择
+	int choice;								// 记录菜单选择
 
-	bool in_word = false;		// 标记当前从文件流中读取的字符是否位于单词中
-	char word[SLEN];			// 从文件中读取整个单词
-	int ch;						// 从文件中逐字读取
-	int word_index = 0;			// 单词的索引
+	bool in_word = false;					// 标记当前从文件流中读取的字符是否位于单词中
+	char word[SLEN];						// 从文件中读取整个单词
+	int ch;									// 从文件中逐字读取
+	int word_index = 0;						// 单词的索引
 
-	InitializeTree(&ptree);		// 初始化链表
+	InitializeTree(&ptree);					// 初始化链表
 
 	// 初始化文件指针
 	pf = fopen(file_name, "r");
