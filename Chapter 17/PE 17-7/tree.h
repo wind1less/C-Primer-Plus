@@ -40,4 +40,5 @@ void DelTree(Tree * ptree);								// 清空树
 bool InTree(Item item, Tree * ptree);							// 检查目标对象是否在树中
 
 Node * FindItem(Item item, Node * root);						// 根据目标对象返回相应节点的指针
+
 #endif
