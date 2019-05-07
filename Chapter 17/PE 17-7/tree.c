@@ -2,9 +2,9 @@
 
 #include "tree.h"
 
-static int SeekItem(Node * pn, Node * root);					// 查找插入的对象在树中的位置
+static int SeekItem(Node * pn, Node * root);				// 查找插入的对象在树中的位置
 static void InOrder(Node * pn, void(*pfun)(Item item));			// 遍历树并对每个节点应用函数
-static void DelAllNode(Node * pn);								// 清除所有的节点
+static void DelAllNode(Node * pn);					// 清除所有的节点
 
 void InitializeTree(Tree * ptree)
 {
