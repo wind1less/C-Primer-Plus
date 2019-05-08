@@ -43,6 +43,7 @@ int main(void)
 
 char menu(void)
 {
+	// 显示菜单响应用户操作
 	int ch;
 
 	puts("\nNerfville Pet Club Membership Program");
@@ -69,6 +70,7 @@ char menu(void)
 
 void Ask_The_Pet(Item * item, char * str)
 {
+	// 记录用户输入的宠物姓名和种类
 	item->kindcount = 0;
 	printf("Please enter name of pet you wish to %s:", str);
 	s_gets(item->petname, SLEN);
@@ -80,6 +82,7 @@ void Ask_The_Pet(Item * item, char * str)
 
 void addpet(Tree * pt)
 {
+	// 执行用户操作添加宠物
 	Item temp;
 
 	if (TreeIsFull(pt))
@@ -93,6 +96,7 @@ void addpet(Tree * pt)
 
 void showpets(const Tree * pt)
 {
+	// 执行用户操作显示宠物列表
 	if (TreeIsEmpty(pt))
 		puts("No entries!");
 	else
@@ -101,6 +105,7 @@ void showpets(const Tree * pt)
 
 void printitem(Item item)
 {
+	// 打印二叉树单个节点内的对象的信息
 	printf("Pet: %-19s\n", item.petname);
 	for(int i = 0; i <= item.kindcount; i++)
 		printf("Kind: %-19s\n", item.petkind[i]);
@@ -108,6 +113,7 @@ void printitem(Item item)
 
 void findpet(const Tree * pt)
 {
+	// 执行用户操作查询宠物
 	Item temp;
 
 	if (TreeIsEmpty(pt))
@@ -126,6 +132,7 @@ void findpet(const Tree * pt)
 
 void droppet(Tree * pt)
 {
+	// 执行用户操作删除宠物
 	Item temp;
 
 	if (TreeIsEmpty(pt))
@@ -145,6 +152,7 @@ void droppet(Tree * pt)
 
 void uppercase(char * str)
 {
+	// 将字符串转为大写
 	while (*str)
 	{
 		*str = toupper(*str);
@@ -154,6 +162,7 @@ void uppercase(char * str)
 
 char * s_gets(char * st, int n)
 {
+	// 读取一行输入
 	char * ret_val;
 	char * find;
 
